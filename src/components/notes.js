@@ -1,14 +1,13 @@
 import {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {SectionWrap} from './styled_components';
-import Note from './note'
+import {SectionWrap, NoteContainer, List,Item} from './styled_components';
 
 var NotesList;
+
 const Content = styled(SectionWrap) `
     justify-content: flex-start;
-    margin: 10px 0px;
-    height: 3rem;
-    width: 200px;
+    margin: 30px 0px;
+    width: 500px;
     border-radius: 1rem;
 `
 const Notes = () => {
@@ -31,28 +30,29 @@ const Notes = () => {
     }
 
     useEffect(() => {
-        getNotes();
+        if (NotesList === undefined ) {
+            getNotes()
+        } return
     })
 
     const loadedContent = () => {
         console.log('loaded content',NotesList);
         return(
-            <ul>
+            <List>
                 {NotesList.map((data, i) => (
-                    <li key={i} id={data.id}>{data.title}</li>
+                    <NoteContainer>
+                        <Item  key={i} id={data.id}>{data.title}</Item>
+                    </NoteContainer>
                 ))}
-            </ul>
-
+            </List>
         )
-
     }
 
     const pendingContent = () => {
         return(
-            <h1>Data is loading</h1>
+            <h2>Data is loading</h2>
         )
     }
-
 
     return(
             <>

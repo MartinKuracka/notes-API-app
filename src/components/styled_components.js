@@ -32,12 +32,25 @@ export const Image = styled.img `
     min-width: 100vw;
     min-height: 100vh;
     height: auto;
-    ${'' /* max-width:100%; */}
-    ${'' /* width: 100vw; */}
     z-index: -1;
     right: 0;
     top: 0;
 `
 export const ContentWrap = styled.div `
     width: 75%;
+`
+export const List = styled.ul `
+    list-style: none;
+    padding: 0;
+    margin: 0;
+`
+export const NoteContainer = styled.div `
+    margin: 5px 0px;
+    padding: 1rem;
+    min-width: 25rem;
+    background-color: whitesmoke;
+    border-radius: 5px;
+`
+export const Item = styled.li `
+        list-style-type: none
 `
