@@ -45,12 +45,16 @@ export const List = styled.ul `
     margin: 0;
 `
 export const NoteContainer = styled.div `
+    display: inline-flex;
+    justify-content: ${props => props.icons ? 'flex-end' : 'space-between'};
     margin: 5px 0px;
-    padding: 1rem;
-    min-width: 25rem;
+    padding: ${props => props.icons ? null : '1rem'};
+    min-width: ${props => props.icons ? '2rem' : '25rem'} ;
     background-color: whitesmoke;
     border-radius: 5px;
+    text-align: center;
 `
 export const Item = styled.li `
-        list-style-type: none
+        list-style-type: none;
+        text-align: center;
 `

@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {SectionWrap, NoteContainer, List,Item} from './styled_components';
+import delIcon from '../img/delete.svg';
+import editIcon from '../img/edit.svg';
 
 var NotesList;
 
@@ -10,14 +12,17 @@ const Content = styled(SectionWrap) `
     width: 500px;
     border-radius: 1rem;
 `
+const Icons = styled.img `
+    cursor: pointer;
+`
 const Notes = () => {
     const [isPending, setPending] = useState(true);
 
     const getNotes = () => {
         try {
-            fetch('https://private-anon-2d96bebd72-note10.apiary-mock.com/notes')
+            fetch('http://localhost:3333/notes')
             .then(response => response.json())
-            .catch(err => console.log('cano not fetch data', err))
+            .catch(err => console.log('can not fetch data', err))
             .then(data => {
                 if (data) {
                     NotesList = data;
@@ -42,6 +47,10 @@ const Notes = () => {
                 {NotesList.map((data, i) => (
                     <NoteContainer>
                         <Item  key={i} id={data.id}>{data.title}</Item>
+                            <NoteContainer icons>
+                                <Icons src={editIcon} id={data.id} title='edit note'/>
+                                <Icons src={delIcon} id={data.id} title='delete note'/>
+                            </NoteContainer>
                     </NoteContainer>
                 ))}
             </List>
