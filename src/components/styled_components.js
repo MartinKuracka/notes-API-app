@@ -58,3 +58,15 @@ export const Item = styled.li `
         list-style-type: none;
         text-align: center;
 `
+export const OverlayWrapper = styled.div `
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 100;
+`
