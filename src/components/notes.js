@@ -1,11 +1,14 @@
 import {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {SectionWrap, NoteContainer, List,Item} from './styled_components';
+import {SectionWrap, NoteContainer, List, Item, Loader, Image} from './styled_components';
 import delIcon from '../img/delete.svg';
 import editIcon from '../img/edit.svg';
 import UpdateNote from './updatenote';
 import Rodal from 'rodal';
 import '../../node_modules/rodal/lib/rodal.css';
+import DeleteNoteFromAPI from '../API_controllers/deletenote_req';
+import DeleteNote from '../components/deletenote';
+import Wedges from '../img/loader.svg'
 
 var NotesList;
 
@@ -23,7 +26,7 @@ const Notes = () => {
     const [isVisible, setVisible] = useState(false);
     const [isPending, setPending] = useState(true);
     const [noteID, setNoteID] = useState(0);
-    // const [noteValue, setNoteValue] = useState('');
+    const [modalType, setModal] = useState('');
 
     const getNotes = () => {
         try {
@@ -48,28 +51,50 @@ const Notes = () => {
     })
 
     const updateHandle = (e) => {
-        console.log('updated', e.target.id);
         setNoteID(e.target.id);
         setVisible(true);
+        setModal('update');
     }
 
     const handleClose = () => {
       setVisible(false)
     }
 
+    const deleteHandle = (e) => {
+        console.log(e);
+        DeleteNoteFromAPI(e.target.id);
+        setModal('delete');
+        setVisible(true)
+    }
+
+    const updateModal = () => {
+        return(
+            <Rodal visible={isVisible} onClose={handleClose} height={40} showCloseButton={false}>
+                <UpdateNote id={noteID}/>
+            </Rodal>
+        )
+    }
+
+    const deleteModal = () => {
+        return(
+            <Rodal visible={isVisible} onClose={handleClose} height={40} showCloseButton={false}>
+                <DeleteNote id={noteID}/>
+            </Rodal>
+        )
+    }
+
     const loadedContent = () => {
-        console.log('loaded content',NotesList);
         return(
             <List>
-                <Rodal visible={isVisible} onClose={handleClose} height={40} showCloseButton={false}>
-                   <UpdateNote id={noteID}/>
-                </Rodal>
+                {modalType === 'update'
+                    ? updateModal()
+                    : deleteModal()}
                 {NotesList.map((data, i) => (
                     <NoteContainer>
                         <Item  key={i} id={data.id}>{data.title}</Item>
                             <NoteContainer icons>
                                 <Icons src={editIcon} id={data.id} title='edit note' onClick={e => updateHandle(e)}/>
-                                <Icons src={delIcon} id={data.id} title='delete note'/>
+                                <Icons src={delIcon} id={data.id} title='delete note' onClick={e => deleteHandle(e)}/>
                             </NoteContainer>
                     </NoteContainer>
                 ))}
@@ -79,7 +104,10 @@ const Notes = () => {
 
     const pendingContent = () => {
         return(
-            <h2>Data is loading</h2>
+            <Loader>
+                <Image src={Wedges} loader/>
+                {/* <h2>Data is loading</h2> */}
+            </Loader>            
         )
     }
 

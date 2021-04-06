@@ -1,7 +1,6 @@
-const SubmitNote = (note) => {
-    console.log('from there', note);
-    try { fetch('http://localhost:3333/notes', {
-        method: 'POST',
+const UpdateNoteContent = (id, note) => {
+    try { fetch(`http://localhost:3333/notes/${id}`, {
+        method: 'PUT',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
             title: note
@@ -12,4 +11,4 @@ const SubmitNote = (note) => {
     } catch(err) {console.log('can not post new note', err)}
 }
 
-export default SubmitNote;
+export default UpdateNoteContent;

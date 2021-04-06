@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { keyframes } from 'styled-components';
 
 export const SectionWrap = styled.div `
     width: 100%;
@@ -19,23 +20,25 @@ export const Button = styled.button `
     outline: none;
     transition: all ease-in-out 0.1s;
     margin-left: ${props => props.note ? '1rem' : null };
+    box-shadow: 5px 5px 5px grey;
 
     &:hover {
         filter: brightness(110%);
     }
 
     &:active {
-        transform: translateY(2px)
+        transform: translateY(2px);
+        box-shadow: 2px 2px 5px grey;
     }
 `
 export const Image = styled.img `
     position: absolute;
-    min-width: 100vw;
+    width: ${props => props.loader ? '150px' : '100vw' };
     min-height: 100vh;
     height: auto;
     z-index: -1;
-    right: 0;
-    top: 0;
+    right: ${props => props.loader ? null : '0'};
+    top: ${props => props.loader ? null : '0'};
 `
 export const ContentWrap = styled.div `
     width: 75%;
@@ -44,6 +47,17 @@ export const List = styled.ul `
     list-style: none;
     padding: 0;
     margin: 0;
+`
+const slideIn = keyframes`
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 `
 export const NoteContainer = styled.div `
     display: inline-flex;
@@ -55,6 +69,7 @@ export const NoteContainer = styled.div `
     background-color: whitesmoke;
     border-radius: 5px;
     text-align: center;
+    animation: ${slideIn} 0.5s ease-in-out ;
 `
 export const Item = styled.li `
         list-style-type: none;
@@ -77,9 +92,20 @@ export const ModalWrap = styled.form `
     justify-content: space-between;
     align-items: center;
     width: 25rem;
-    ${'' /* padding: 0.5rem; */}
+    margin-bottom: ${props => props.delete ? '20px' : null };
 `
 export const Modalinput = styled.input `
     height: 1.5rem;
     width: 80%;
+`
+export const Loader = styled.div `
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4)
 `

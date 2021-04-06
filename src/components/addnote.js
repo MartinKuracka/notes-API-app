@@ -1,5 +1,5 @@
 import { ModalWrap, Modalinput, Button } from "./styled_components";
-import SubmitNote from '../API_controllers/submitnewnote'
+import SubmitNote from '../API_controllers/submitnewnote_req'
 
 const addNote = () => {
 
@@ -16,8 +16,5 @@ const addNote = () => {
         </>
     )
 }
-
-
-
 
 export default addNote;

@@ -13,7 +13,7 @@ const NotesWrap = styled(ContentWrap) `
   margin-top: 30px;
 `
 function App() {
-  
+
   const [isVisible, setVisible] = useState(false);
 
   const handleOnClick = () => {

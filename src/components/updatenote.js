@@ -1,15 +1,9 @@
-import {useState} from 'react';
 import { ModalWrap, Modalinput, Button } from "./styled_components";
-import UpdateNoteContent from '../API_controllers/updatenotecontent';
+import UpdateNoteContent from '../API_controllers/updatenotecontent_req';
 
 const UpdateNote = ({id}) => {
 
-    const [noteValue, setNoteValue] = useState('');
-
     const submitHandle = (e) => {
-        // e.preventDefault();
-        console.log('id is:', id);
-        console.log('value is:', e.target[0].value);
         UpdateNoteContent(id, e.target[0].value);
     }
 
@@ -22,8 +16,5 @@ const UpdateNote = ({id}) => {
         </>
     )
 }
-
-
-
 
 export default UpdateNote;
