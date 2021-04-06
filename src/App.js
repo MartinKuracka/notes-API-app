@@ -10,6 +10,8 @@ import AddNote from './components/addnote'
 
 const NotesWrap = styled(ContentWrap) `
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 30px;
 `
 function App() {

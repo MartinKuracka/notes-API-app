@@ -17,6 +17,9 @@ const Content = styled(SectionWrap) `
     margin: 30px 0px;
     width: 500px;
     border-radius: 1rem;
+    @media (max-width: 550px) {
+        justify-content: center  
+    }
 `
 const Icons = styled.img `
     cursor: pointer;

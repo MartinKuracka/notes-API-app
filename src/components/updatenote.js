@@ -10,7 +10,7 @@ const UpdateNote = ({id}) => {
     return(
         <>
         <ModalWrap onSubmit={(e) => submitHandle(e)}>
-            <Modalinput type='text' id='note'/>
+            <Modalinput type='text' id='note' autoFocus/>
             <Button note type='submit'>UPDATE</Button>
         </ModalWrap>
         </>

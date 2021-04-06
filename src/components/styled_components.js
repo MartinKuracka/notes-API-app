@@ -42,6 +42,10 @@ export const Image = styled.img `
 `
 export const ContentWrap = styled.div `
     width: 75%;
+    
+    @media (max-width: 550px) {
+        width: 95%;
+    }
 `
 export const List = styled.ul `
     list-style: none;
@@ -69,7 +73,7 @@ export const NoteContainer = styled.div `
     background-color: whitesmoke;
     border-radius: 5px;
     text-align: center;
-    animation: ${slideIn} 0.5s ease-in-out ;
+    animation: ${slideIn} 0.7s ease-in-out ;
 `
 export const Item = styled.li `
         list-style-type: none;
@@ -84,7 +88,7 @@ export const OverlayWrapper = styled.div `
     height: 100vh;
     top:0;
     left:0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0);
     z-index: 100;
 `
 export const ModalWrap = styled.form `
