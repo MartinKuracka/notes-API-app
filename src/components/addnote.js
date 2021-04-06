@@ -4,8 +4,6 @@ import SubmitNote from '../API_controllers/submitnewnote'
 const addNote = () => {
 
     const submitHandle = (e) => {
-        // e.preventDefault();
-        // console.log(e.target[0].value);
         SubmitNote(e.target[0].value);
     }
 
@@ -17,8 +15,6 @@ const addNote = () => {
         </ModalWrap>
         </>
     )
-    
-
 }
 
 
