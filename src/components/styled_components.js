@@ -9,8 +9,8 @@ export const SectionWrap = styled.div `
 export const Button = styled.button `
     font-family: 'Raleway', sans-serif;
     width: 7rem;
-    height: 3rem;
-    background: linear-gradient(183deg, rgba(160,124,28,1) 0%, rgba(191,186,147,1) 100%);;
+    height: ${props => props.note ? '2rem' : '3rem' };
+    background: linear-gradient(183deg, rgba(160,124,28,1) 0%, rgba(191,186,147,1) 100%);
     color: white;
     border-radius: 1.5rem;
     border: none;
@@ -18,6 +18,7 @@ export const Button = styled.button `
     cursor: pointer;
     outline: none;
     transition: all ease-in-out 0.1s;
+    margin-left: ${props => props.note ? '1rem' : null };
 
     &:hover {
         filter: brightness(110%);
@@ -48,7 +49,8 @@ export const NoteContainer = styled.div `
     display: inline-flex;
     justify-content: ${props => props.icons ? 'flex-end' : 'space-between'};
     margin: 5px 0px;
-    padding: ${props => props.icons ? null : '1rem'};
+    padding: ${props => props.icons ? null :
+         props.modal ? '0px' : '1rem'};
     min-width: ${props => props.icons ? '2rem' : '25rem'} ;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -67,6 +69,17 @@ export const OverlayWrapper = styled.div `
     height: 100vh;
     top:0;
     left:0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.5);
     z-index: 100;
+`
+export const ModalWrap = styled.form `
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25rem;
+    ${'' /* padding: 0.5rem; */}
+`
+export const Modalinput = styled.input `
+    height: 1.5rem;
+    width: 80%;
 `
