@@ -1,0 +1,9 @@
+{
+    "Addbutton" : "ADD",
+    "editbutton" : "edit note",
+    "deleteicon" : "delete note",
+    "updatebutton" : "UPDATE",
+    "deletebutton" : "DELETE",
+    "lang" : "EN",
+    "deleteinfo" : "Delete this note?"
+}

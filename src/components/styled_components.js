@@ -7,6 +7,30 @@ export const SectionWrap = styled.div `
     justify-content:center;
     align-content: center;
 `
+export const Section = styled(SectionWrap) `
+height: 80px;
+background-color: rgba(255,255,255,0.2);
+`
+export const Icons = styled.img `
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    border-radius: 3px;
+
+    &:hover {
+        ${'' /* transform: scale(1.05); */}
+        background-color: rgba(180, 146, 49, 0.5);
+        filter: brightness(120%)
+    }
+`
+export const Content2 = styled(SectionWrap) `
+    justify-content: flex-start;
+    margin: 30px 0px;
+    width: 500px;
+    border-radius: 1rem;
+    @media (max-width: 550px) {
+        justify-content: center  
+    }
+`
 export const Button = styled.button `
     font-family: 'Raleway', sans-serif;
     width: 7rem;
@@ -47,6 +71,38 @@ export const ContentWrap = styled.div `
         width: 95%;
     }
 `
+export const Language = styled.div `
+display: inline-flex;
+align-items: center;
+margin-top: auto;
+margin-bottom: auto;
+`
+export const Lang = styled.h3 `
+    color: white;
+    margin-right:20px;
+`
+export const DelText = styled.h3 `
+    margin-top: 6px;
+`
+export const LogoImg = styled.img `
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: ${props => props.lang && '10px'};
+    height: ${props => props.lang ? '30px' : '60px' }};
+    cursor: pointer;
+`
+export const Content = styled(ContentWrap) `
+display: flex;
+justify-content: space-between;
+align-content: center;
+`
+export const NotesWrap = styled(ContentWrap) `
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+`
 export const List = styled.ul `
     list-style: none;
     padding: 0;
@@ -69,11 +125,20 @@ export const NoteContainer = styled.div `
     margin: 5px 0px;
     padding: ${props => props.icons ? null :
          props.modal ? '0px' : '1rem'};
-    min-width: ${props => props.icons ? '2rem' : '25rem'} ;
+    width: ${props => props.icons ? '2rem' : '25rem'} ;
     background-color: whitesmoke;
     border-radius: 5px;
     text-align: center;
-    animation: ${slideIn} 0.7s ease-in-out ;
+    animation: ${slideIn} 0.7s ease-in-out;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+        transform: ${props => props.icons ? null : 'scale(1.15)'};
+    }
+
+    @media (max-width: 550px) {
+        width: ${props => props.icons ? '2rem' : '85vw'};
+    }
 `
 export const Item = styled.li `
         list-style-type: none;
@@ -94,15 +159,18 @@ export const OverlayWrapper = styled.div `
 export const ModalWrap = styled.form `
     display: inline-flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: center;
+    margin-top: 4px;
+    margin-bottom: auto;
     width: 25rem;
-    margin-bottom: ${props => props.delete ? '20px' : null };
 `
 export const Modalinput = styled.input `
     height: 1.5rem;
     width: 80%;
+    margin-bottom: auto;
+    margin-top: auto;
 `
-export const Loader = styled.div `
+export const LoaderDiv = styled.div `
     position: absolute;
     left: 0;
     top: 0;

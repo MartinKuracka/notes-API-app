@@ -1,17 +1,25 @@
-import { ModalWrap, Modalinput, Button } from "./styled_components";
-import DeleteNoteFromAPI from '../API_controllers/deletenote_req'
+// styled components
+import { ModalWrap, Button, DelText } from "./styled_components";
 
-const DeleteNote = () => {
+// API request
+import DeleteNoteFromAPI from '../API_controllers/deletenote_req';
+
+// i18n translation
+import { useTranslation } from 'react-i18next';
+
+const DeleteNote = ({id}) => {
+
+    const { t, i18n } = useTranslation();
 
     const submitHandle = (e) => {
-        DeleteNoteFromAPI(e.target[0].value);
+        DeleteNoteFromAPI(id);
     }
 
     return(
         <>
         <ModalWrap onSubmit={(e) => submitHandle(e)} delete>
-            <h3>Delete this note?</h3>
-            <Button note type='submit'>DELETE</Button>
+            <DelText>{t('deleteinfo')}</DelText>
+            <Button note type='submit'>{t('deletebutton')}</Button>
         </ModalWrap>
         </>
     )

@@ -1,41 +1,31 @@
-import styled from 'styled-components';
-import {SectionWrap, ContentWrap} from './styled_components';
-import Logo from '../img/logo.png';
-import ToggleBtn from './toggleswitch';
+// syled components
+import { Section, Content, LogoImg, Language, Lang } from './styled_components';
 
-const Section = styled(SectionWrap) `
-    height: 80px;
-    background-color: rgba(255,255,255,0.2);
-`
-const Content = styled(ContentWrap) `
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-`
-const LogoImg = styled.img `
-    display: block;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 60px;
-`
-const Language = styled.div `
-    display: inline-flex;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: auto;
-`
-const Lang = styled.h3 `
-    color: white;
-    margin-left:20px;
-`
+// images
+import Logo from '../img/logo.png';
+import CZ from '../img/cz.svg';
+import EN from '../img/en.svg';
+
+// i18n translation
+import { useTranslation } from 'react-i18next';
+
 const Navbar = () => {
+    // i18n
+    const { t, i18n } = useTranslation();
+
+    const changeLanguage = ln => {
+        i18n.changeLanguage(ln);
+        localStorage.setItem('lang', ln);
+    }
+
     return(
         <Section>
             <Content>
                 <LogoImg src={Logo}/>
                 <Language>
-                    <ToggleBtn/>
-                    <Lang>EN</Lang>
+                    <Lang>{t('lang')}</Lang>
+                    <LogoImg lang src={EN} onClick={() => changeLanguage('en')}/>
+                    <LogoImg lang src={CZ} onClick={() => changeLanguage('cz')}/>
                 </Language>
             </Content>
         </Section>

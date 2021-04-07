@@ -1,42 +1,26 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
+// i18n translation
+import './i18n';
+import { useTranslation } from 'react-i18next';
+// styled components
 import styled from 'styled-components';
-import {Button, SectionWrap, Image, ContentWrap, OverlayWrapper, NoteContainer} from './components/styled_components';
-import Img from './img/notebook.jpg';
+import {Button, SectionWrap, Image, NotesWrap} from './components/styled_components';
+// Components
 import Navbar from './components/navbar';
-import Notes from './components/notes';
-import Rodal from 'rodal';
+import NotesContainer from './components/notescontainer';
+// Modal styling
 import '../node_modules/rodal/lib/rodal.css';
-import AddNote from './components/addnote'
+// images
+import Img from './img/notebook.jpg';
 
-const NotesWrap = styled(ContentWrap) `
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-`
 function App() {
-
-  const [isVisible, setVisible] = useState(false);
-
-  const handleOnClick = () => {
-    setVisible(true);
-  }
-
-  const handleClose = () => {
-    setVisible(false)
-  }
-
   return (
     <>
       <Image src={Img} />
       <Navbar />
-      <Rodal visible={isVisible} onClose={handleClose} height={40} showCloseButton={false}>
-        <AddNote />
-      </Rodal>
       <SectionWrap>
         <NotesWrap>
-          <Button onClick={() => handleOnClick()} >ADD NEW</Button>
-          <Notes />
+          <NotesContainer />
         </NotesWrap>
       </SectionWrap>
     </>
