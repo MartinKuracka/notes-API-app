@@ -133,7 +133,7 @@ export const NoteContainer = styled.div `
     transition: all ease-in-out 0.2s;
 
     &:hover {
-        transform: ${props => props.icons ? null : 'scale(1.15)'};
+        transform: ${props => props.icons ? null : 'scale(1.06)'};
     }
 
     @media (max-width: 550px) {
