@@ -6,6 +6,7 @@ import Notes from './notes/notes';
 import AddNote from '../modals/modal_content/addnote/addnote';
 // Modal
 import Rodal from 'rodal';
+import '../../../node_modules/rodal/lib/rodal.css'
 // i18n translation
 import { useTranslation } from 'react-i18next';
 
@@ -15,6 +16,7 @@ const NotesContainer = () => {
     const { t, i18n } = useTranslation();
 
     const handleAddNote = () => {
+        console.log('adding');
         setVisible(true);
     }
 
