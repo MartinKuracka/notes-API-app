@@ -3,7 +3,7 @@ const DeleteNote = (id) => {
         method: 'DELETE',
         headers: {'Content-type': 'application/json'}})
     .then(response => response.json())
-    .then(response => console.log(response))    
+    .then(response => console.log(response))
     } catch(err) {console.log('can not delete note')}
 }
 

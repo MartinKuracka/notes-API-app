@@ -1,8 +1,12 @@
 import {useState} from 'react';
-import { Button } from '../components/styled_components';
-import Notes from '../components/notes';
-import AddNote from '../components/addnote';
+// styled components
+import { Button } from '../styled_components';
+// cmponents
+import Notes from './notes/notes';
+import AddNote from '../modals/modal_content/addnote/addnote';
+// Modal
 import Rodal from 'rodal';
+// i18n translation
 import { useTranslation } from 'react-i18next';
 
 const NotesContainer = () => {
@@ -12,7 +16,7 @@ const NotesContainer = () => {
 
     const handleAddNote = () => {
         setVisible(true);
-      }
+    }
 
     const handleClose = () => {
         setVisible(false)
@@ -21,7 +25,7 @@ const NotesContainer = () => {
     return(
         <>
         <Rodal visible={isVisible} onClose={handleClose} height={40} showCloseButton={false} >
-            <AddNote />
+            <AddNote setVisible={setVisible}/>
         </Rodal>
         <Button onClick={() => handleAddNote()} >{t('Addbutton')}</Button>
         <Notes />

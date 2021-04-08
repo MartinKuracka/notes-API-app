@@ -4,7 +4,7 @@
   "deleteicon" : "smazat poznámku",
   "updatebutton" : "ZMĚNIT",
   "deletebutton" : "SMAZAT",
-  "lang" : "CZ",
+  "language" : "CZ",
   "deleteinfo" : "Smazat tuto poznámku?"
 
 }

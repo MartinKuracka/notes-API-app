@@ -17,10 +17,8 @@ const storedLang = localStorage.getItem('lang');
 if (!storedLang) {
     localStorage.setItem('lang', 'en');
     lang = 'en';
-    console.log(lang);
 } else {
     lang = storedLang;
-    console.log(lang)
 }
 
 i18n.use(initReactI18next)  

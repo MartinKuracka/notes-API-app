@@ -7,7 +7,7 @@ const UpdateNoteContent = (id, note) => {
             })
     })
     .then(response => response.json())
-    .then(response => console.log(response))    
+    .then(response => console.log(response))
     } catch(err) {console.log('can not post new note', err)}
 }
 

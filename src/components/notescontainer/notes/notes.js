@@ -1,12 +1,15 @@
 import {useState, useEffect} from 'react';
-import { NoteContainer, List, Item, Content2, Icons, Button } from './styled_components';
-import delIcon from '../img/delete.svg';
-import editIcon from '../img/edit.svg';
-import '../../node_modules/rodal/lib/rodal.css';
+// styled components
+import { NoteContainer, List, Item, Content2, Icons } from '../../styled_components';
+// images
+import delIcon from '../../../img/delete.svg';
+import editIcon from '../../../img/edit.svg';
+// i18n tanslation
 import { useTranslation } from 'react-i18next';
-import Loader from './loader';
-import UpdateModal from '../components/modals/updatemodal';
-import DeleteModal from '../components/modals/deletemodal';
+// components
+import Loader from '../../loader';
+import UpdateModal from '../../modals/updatemodal';
+import DeleteModal from '../../modals/deletemodal';
 
 var notesList;
 
@@ -31,13 +34,13 @@ const Notes = () => {
                 }
             })
         } catch(err) {
-            console.log(err)
+            console.log('something went wrong',err)
         }
     }
 
     useEffect(() => {
         if (notesList === undefined ) {
-            getNotes()
+            return getNotes()
         } return
     })
 
@@ -57,14 +60,36 @@ const Notes = () => {
         setVisible(false)
     }
 
+    const Modal = () => {
+        switch(modalType) {
+            case 'update':
+                return <UpdateModal isVisible={isVisible} handleClose={handleClose} noteID={noteID}/>;
+            case 'delete':
+                return <DeleteModal isVisible={isVisible} handleClose={handleClose} noteID={noteID}/>;
+            default:
+                return null;
+        }
+    }
+
+    const ModalVisible = () => {
+        if (isVisible === true) {
+            return Modal();
+        }
+    }
+
+    const Content = () =>{
+        switch(isPending) {
+            case true:
+                return <Loader />;
+            case false:
+                return loadedContent();
+        }
+    }
+
     const loadedContent = () => {
         return(
             <List>
-                {isVisible === true
-                    ? modalType === 'update'
-                        ? <UpdateModal isVisible={isVisible} handleClose={handleClose} noteID={noteID}/>
-                        : <DeleteModal isVisible={isVisible} handleClose={handleClose} noteID={noteID}/>
-                        : null}
+                {ModalVisible()}
                 {notesList.map((data, i) => (
                     <NoteContainer>
                         <Item  key={i} id={data.id}>{data.title}</Item>
@@ -79,14 +104,9 @@ const Notes = () => {
     }
 
     return(
-            <>
-            <Content2>
-                {isPending === true
-                    ? <Loader />
-                    : loadedContent()
-                }
-            </Content2>
-            </>
+        <Content2>
+            {Content()}
+        </Content2>
     )
 }
 

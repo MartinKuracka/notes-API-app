@@ -1,5 +1,7 @@
+// modal
 import Rodal from 'rodal';
-import DeleteNote from '../deletenote';
+// component
+import DeleteNote from './modal_content/deletenote';
 
 
 const DeleteModal = ({isVisible, handleClose, noteID}) => {

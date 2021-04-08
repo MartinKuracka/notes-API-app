@@ -28,7 +28,7 @@ export const Content2 = styled(SectionWrap) `
     width: 500px;
     border-radius: 1rem;
     @media (max-width: 550px) {
-        justify-content: center  
+        justify-content: center
     }
 `
 export const Button = styled.button `
@@ -66,7 +66,7 @@ export const Image = styled.img `
 `
 export const ContentWrap = styled.div `
     width: 75%;
-    
+
     @media (max-width: 550px) {
         width: 95%;
     }
@@ -88,8 +88,8 @@ export const LogoImg = styled.img `
     display: block;
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: ${props => props.lang && '10px'};
-    height: ${props => props.lang ? '30px' : '60px' }};
+    margin-right: ${props => props.language ? '10px' : null};
+    height: ${props => props.language ? '30px' : '60px' }};
     cursor: pointer;
 `
 export const Content = styled(ContentWrap) `

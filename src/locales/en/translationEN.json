@@ -4,6 +4,6 @@
     "deleteicon" : "delete note",
     "updatebutton" : "UPDATE",
     "deletebutton" : "DELETE",
-    "lang" : "EN",
+    "language" : "EN",
     "deleteinfo" : "Delete this note?"
 }
