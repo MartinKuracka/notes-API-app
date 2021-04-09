@@ -2,7 +2,7 @@
 
 This is simple application to demonstrate fetching data from API server. It is intended solely for demonstration purposes, so far there has been done no testing so please consider this fact when using it - it is not intended to be fully working and deployed Notes App.
 
-For the app to function properly You need to download and run local server from this link:
+For the app to function properly, first You need to download and run local server from this link:
 
 https://github.com/MartinKuracka/notes-api-server
 
