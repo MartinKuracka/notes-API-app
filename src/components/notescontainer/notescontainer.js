@@ -3,9 +3,8 @@ import {useState} from 'react';
 import { Button } from '../styled_components';
 // cmponents
 import Notes from './notes/notes';
-import AddNote from '../modals/modal_content/addnote/addnote';
 // Modal
-import Rodal from 'rodal';
+import Modal from '../modals/modal'
 import '../../../node_modules/rodal/lib/rodal.css'
 // i18n translation
 import { useTranslation } from 'react-i18next';
@@ -16,7 +15,6 @@ const NotesContainer = () => {
     const { t, i18n } = useTranslation();
 
     const handleAddNote = () => {
-        console.log('adding');
         setVisible(true);
     }
 
@@ -24,11 +22,15 @@ const NotesContainer = () => {
         setVisible(false)
     }
 
+    const ModalVisible = () => {
+        if (isVisible === true) {
+            return <Modal isVisible={isVisible} handleClose={handleClose} modalType='addnote'/>
+        }
+    }
+
     return(
         <>
-        <Rodal visible={isVisible} onClose={handleClose} height={40} showCloseButton={false} >
-            <AddNote setVisible={setVisible}/>
-        </Rodal>
+        {ModalVisible()}
         <Button onClick={() => handleAddNote()} >{t('Addbutton')}</Button>
         <Notes />
         </>

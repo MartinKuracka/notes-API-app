@@ -1,16 +1,15 @@
 // styled components
-import { ModalWrap, Modalinput, Button } from "../../../styled_components";
+import { ModalWrap, Modalinput, Button } from "../../styled_components";
 // API request
-import SubmitNote from '../../../../API_controllers/submitnewnote_req';
+import SubmitNote from '../../../API_controllers/submitnewnote_req';
 // i18n translation
 import { useTranslation } from 'react-i18next';
 
 const AddNote = ({setVisible}) => {
     // i18n
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const submitHandle = (e) => {
-        console.log(e.target[0].value);
         if (e.target[0].value === undefined) {
             setVisible(false);
             return console.log('empty note can not be submitted');

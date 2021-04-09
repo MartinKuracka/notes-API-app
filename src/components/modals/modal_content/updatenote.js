@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const UpdateNote = ({id}) => {
     // i18n
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const submitHandle = (e) => {
         UpdateNoteContent(id, e.target[0].value);

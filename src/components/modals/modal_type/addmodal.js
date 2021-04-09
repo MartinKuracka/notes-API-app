@@ -1,7 +1,7 @@
 // modal
 import Rodal from 'rodal';
 // component
-import AddNote from './modal_content/addnote/addnote';
+import AddNote from '../modal_content/addnote';
 
 const AddModal = ({isVisible, handleClose}) => {
     return( 

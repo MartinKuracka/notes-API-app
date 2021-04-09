@@ -1,8 +1,7 @@
 // modal
 import Rodal from 'rodal';
 // component
-import UpdateNote from './modal_content/updatenote';
-
+import UpdateNote from '../modal_content/updatenote';
 
 const UpdateModal = ({isVisible, handleClose, noteID}) => {
     return(

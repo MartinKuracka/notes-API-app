@@ -1,4 +1,4 @@
-const DeleteNote = (id) => {
+const DeleteNoteFromAPI = (id) => {
     try { fetch(`http://localhost:3333/notes/${id}`, {
         method: 'DELETE',
         headers: {'Content-type': 'application/json'}})
@@ -7,4 +7,4 @@ const DeleteNote = (id) => {
     } catch(err) {console.log('can not delete note')}
 }
 
-export default DeleteNote;
+export default DeleteNoteFromAPI;

@@ -1,21 +1,13 @@
 import {useState, useEffect} from 'react';
 // styled components
-import { NoteContainer, List, Item, Content2, Icons } from '../../styled_components';
-// images
-import delIcon from '../../../img/delete.svg';
-import editIcon from '../../../img/edit.svg';
-// i18n tanslation
-import { useTranslation } from 'react-i18next';
+import { Content2 } from '../../styled_components';
 // components
 import Loader from '../../loader';
-import UpdateModal from '../../modals/updatemodal';
-import DeleteModal from '../../modals/deletemodal';
+import LoadedContent from '../../notescontainer/notes/loadedcontent/loadedcontent';
 
 var notesList;
 
 const Notes = () => {
-    // i18n
-    const { t, i18n } = useTranslation();
 
     const [isVisible, setVisible] = useState(false);
     const [isPending, setPending] = useState(true);
@@ -60,47 +52,23 @@ const Notes = () => {
         setVisible(false)
     }
 
-    const Modal = () => {
-        switch(modalType) {
-            case 'update':
-                return <UpdateModal isVisible={isVisible} handleClose={handleClose} noteID={noteID}/>;
-            case 'delete':
-                return <DeleteModal isVisible={isVisible} handleClose={handleClose} noteID={noteID}/>;
-            default:
-                return null;
-        }
-    }
-
-    const ModalVisible = () => {
-        if (isVisible === true) {
-            return Modal();
-        }
-    }
-
     const Content = () =>{
         switch(isPending) {
             case true:
                 return <Loader />;
             case false:
-                return loadedContent();
+                return <LoadedContent
+                            isVisible={isVisible}
+                            handleClose={handleClose}
+                            noteID={noteID}
+                            modalType={modalType}
+                            notesList={notesList}
+                            deleteHandle={deleteHandle}
+                            updateHandle={updateHandle}
+                        />;
+            default:
+                return null;
         }
-    }
-
-    const loadedContent = () => {
-        return(
-            <List>
-                {ModalVisible()}
-                {notesList.map((data, i) => (
-                    <NoteContainer>
-                        <Item  key={i} id={data.id}>{data.title}</Item>
-                            <NoteContainer icons>
-                                <Icons src={editIcon} id={data.id} title={t('editbutton')} onClick={e => updateHandle(e)}/>
-                                <Icons src={delIcon} id={data.id} title={t('deleteicon')} onClick={e => deleteHandle(e)}/>
-                            </NoteContainer>
-                    </NoteContainer>
-                ))}
-            </List>
-        )
     }
 
     return(
