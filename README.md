@@ -6,6 +6,10 @@ For the app to function properly, first You need to download and run local serve
 
 https://github.com/MartinKuracka/notes-api-server
 
+After You have installed and run the server, You can run the App directly from this link and test it's functionalities:
+
+https://martinkuracka.github.io/notes-API-app/
+
 As other option, You can also clone this repository and run it locally:
 
 1. Clone repository to Your preffered local folder:
