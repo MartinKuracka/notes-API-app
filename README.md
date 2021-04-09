@@ -6,7 +6,7 @@ For the app to function properly, first You need to download and run local serve
 
 https://github.com/MartinKuracka/notes-api-server
 
-As other option, You can also clone this repository and run it locally as well
+As other option, You can also clone this repository and run it locally:
 
 1. Clone repository to Your preffered local folder:
 
