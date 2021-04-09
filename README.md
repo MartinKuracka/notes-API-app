@@ -10,19 +10,19 @@ As other option, You can also clone this repository and run it locally as well
 
 1. Clone repository to Your preffered local folder:
 
-  ``git clone https://github.com/MartinKuracka/notes-API-app.git``
+   ``git clone https://github.com/MartinKuracka/notes-API-app.git``
 
 2. Navigate to the created folder:
 
-  ``cd notes-API-app``
+   ``cd notes-API-app``
 
 3. Initialise the repository:
 
-  ``npm install``
+   ``npm install``
 
 4. Run the App:
 
-  ``npm start``
+   ``npm start``
 
 Enjoy...
 
