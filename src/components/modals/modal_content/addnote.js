@@ -5,16 +5,14 @@ import SubmitNote from '../../../API_controllers/submitnewnote_req';
 // i18n translation
 import { useTranslation } from 'react-i18next';
 
-const AddNote = ({setVisible}) => {
+const AddNote = () => {
     // i18n
     const { t } = useTranslation();
 
     const submitHandle = (e) => {
-        if (e.target[0].value === undefined) {
-            setVisible(false);
+        if (e.target[0].value.length === 0) {
             return console.log('empty note can not be submitted');
-        }
-        SubmitNote(e.target[0].value);
+        } else SubmitNote(e.target[0].value);
     }
 
     return(

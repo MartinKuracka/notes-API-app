@@ -5,5 +5,7 @@
     "updatebutton" : "UPDATE",
     "deletebutton" : "DELETE",
     "language" : "EN",
-    "deleteinfo" : "Delete this note?"
+    "deleteinfo" : "Delete this note?",
+    "infonote": "Empty note can not be submitted",
+    "servermsg": "Server not responding, make sure it is activated"
 }

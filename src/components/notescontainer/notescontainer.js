@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 const NotesContainer = () => {
 
     const [isVisible, setVisible] = useState(false)
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const handleAddNote = () => {
         setVisible(true);

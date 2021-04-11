@@ -18,7 +18,7 @@ const Notes = () => {
         try {
             fetch('http://localhost:3333/notes')
             .then(response => response.json())
-            .catch(err => console.log('can not fetch data', err))
+            .catch(err => canNotFetch())
             .then(data => {
                 if (data) {
                     notesList = data;
@@ -28,6 +28,15 @@ const Notes = () => {
         } catch(err) {
             console.log('something went wrong',err)
         }
+    }
+
+    const canNotFetch = () => {
+        setTimeout(() => {
+            setVisible(true);
+            setPending(false);
+            setModal('info'); 
+        },1000)
+        
     }
 
     useEffect(() => {
@@ -49,6 +58,9 @@ const Notes = () => {
     }
 
     const handleClose = () => {
+        if (!notesList) {
+            setPending(true);
+        }
         setVisible(false)
     }
 

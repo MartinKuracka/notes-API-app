@@ -5,6 +5,7 @@
   "updatebutton" : "ZMĚNIT",
   "deletebutton" : "SMAZAT",
   "language" : "CZ",
-  "deleteinfo" : "Smazat tuto poznámku?"
-
+  "deleteinfo" : "Smazat tuto poznámku?",
+  "infonote": "Prázdná poznámka se nedá uložit",
+  "servermsg": "Server neodpovídá, ujistěte se jestli je aktivní"
 }
