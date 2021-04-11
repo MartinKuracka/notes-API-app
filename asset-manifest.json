@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/notes-API-app/static/css/main.c4e9a87f.chunk.css",
-    "main.js": "/notes-API-app/static/js/main.8830746e.chunk.js",
-    "main.js.map": "/notes-API-app/static/js/main.8830746e.chunk.js.map",
+    "main.css": "/notes-API-app/static/css/main.499d641e.chunk.css",
+    "main.js": "/notes-API-app/static/js/main.79998a97.chunk.js",
+    "main.js.map": "/notes-API-app/static/js/main.79998a97.chunk.js.map",
     "runtime-main.js": "/notes-API-app/static/js/runtime-main.6f58c8fe.js",
     "runtime-main.js.map": "/notes-API-app/static/js/runtime-main.6f58c8fe.js.map",
     "static/css/2.dbb6bb58.chunk.css": "/notes-API-app/static/css/2.dbb6bb58.chunk.css",
-    "static/js/2.c40f1083.chunk.js": "/notes-API-app/static/js/2.c40f1083.chunk.js",
-    "static/js/2.c40f1083.chunk.js.map": "/notes-API-app/static/js/2.c40f1083.chunk.js.map",
+    "static/js/2.569de55c.chunk.js": "/notes-API-app/static/js/2.569de55c.chunk.js",
+    "static/js/2.569de55c.chunk.js.map": "/notes-API-app/static/js/2.569de55c.chunk.js.map",
     "index.html": "/notes-API-app/index.html",
     "static/css/2.dbb6bb58.chunk.css.map": "/notes-API-app/static/css/2.dbb6bb58.chunk.css.map",
-    "static/css/main.c4e9a87f.chunk.css.map": "/notes-API-app/static/css/main.c4e9a87f.chunk.css.map",
-    "static/js/2.c40f1083.chunk.js.LICENSE.txt": "/notes-API-app/static/js/2.c40f1083.chunk.js.LICENSE.txt",
+    "static/css/main.499d641e.chunk.css.map": "/notes-API-app/static/css/main.499d641e.chunk.css.map",
+    "static/js/2.569de55c.chunk.js.LICENSE.txt": "/notes-API-app/static/js/2.569de55c.chunk.js.LICENSE.txt",
     "static/media/cz.57c7199f.svg": "/notes-API-app/static/media/cz.57c7199f.svg",
     "static/media/delete.1129c53a.svg": "/notes-API-app/static/media/delete.1129c53a.svg",
     "static/media/edit.4fa02ba3.svg": "/notes-API-app/static/media/edit.4fa02ba3.svg",
     "static/media/en.2d19fed4.svg": "/notes-API-app/static/media/en.2d19fed4.svg",
-    "static/media/loader.a709c2f0.svg": "/notes-API-app/static/media/loader.a709c2f0.svg",
+    "static/media/loader.157bacc8.svg": "/notes-API-app/static/media/loader.157bacc8.svg",
     "static/media/logo.606d99e4.png": "/notes-API-app/static/media/logo.606d99e4.png",
     "static/media/notebook.2d0260f3.jpg": "/notes-API-app/static/media/notebook.2d0260f3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6f58c8fe.js",
     "static/css/2.dbb6bb58.chunk.css",
-    "static/js/2.c40f1083.chunk.js",
-    "static/css/main.c4e9a87f.chunk.css",
-    "static/js/main.8830746e.chunk.js"
+    "static/js/2.569de55c.chunk.js",
+    "static/css/main.499d641e.chunk.css",
+    "static/js/main.79998a97.chunk.js"
   ]
 }
